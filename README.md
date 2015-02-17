@@ -6,7 +6,7 @@ Bootstrap
 
 Bootstrap and download a bunch of libraries. Makes getting started faster
 - Original: https://github.com/seriallos/computercraft/blob/master/bootstrap.lua
-
+- Start with: pastebin get WdiT6sR5 bootstrap
 
 MultiSensors
 ------------

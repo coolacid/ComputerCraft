@@ -7,7 +7,7 @@ of 'pastebin get'
 
 Usage:
 
-  > pastebin get 55tqszpw bootstrap
+  > pastebin get WdiT6sR5 bootstrap
   > bootstrap
 
 --]]
