@@ -1,12 +1,12 @@
 -- By @Coolacid
--- Detect players and display their name in a Glass Hud
+-- Detect players and display their name on a monitor or a Glass Hud
 -- Multiple Sensors using modems and network cable
 -- Place a modem on the Advanced Computer, then apply network cable to your locations
 -- Place a new Sensor on top of the cable, and attach a modem
 -- Click on the modem to activate it on the network
 
 -- Use Glasses instead of a monitor
-use_glasses = true
+use_glasses = false
 
 -- Show current server time on glasses
 glasses_time = true
@@ -75,6 +75,8 @@ function getTargets()
   players = {}
   for _, radar in pairs (radars) do
     for _, player in pairs (radar.getPlayers()) do
+      playerlocation = radar.getPlayerByName(player).position
+      player['location'] = playerdata.x
       table.insert(players,player)
     end
   end
