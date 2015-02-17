@@ -5,6 +5,14 @@
 -- Place a new Sensor on top of the cable, and attach a modem
 -- Click on the modem to activate it on the network
 
+-- To get started:
+
+-- label set SomeKindOfNameHere
+-- pastebin get WdiT6sR5 bootstrap
+-- bootstrap
+-- github get coolacid/ComputerCraft/master/multisensors.lua startup
+-- startup
+
 -- Use Glasses instead of a monitor
 use_glasses = false
 

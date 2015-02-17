@@ -6,10 +6,11 @@
 -- http://twitch.tv/bacon_donut
 
 -- This is formatted to fit on a 1x3 wall of Advanced Monitors with an Advanced Computer connected to a side
--- To get this to work you need to edit the streamid variable then run these four commands:
+-- To get this to work you need to edit the streamid variable then run these five commands:
 
 -- label set SomeKindOfNameHere
 -- pastebin get WdiT6sR5 bootstrap
+-- bootstrap
 -- github get coolacid/ComputerCraft/master/twitchdisplay.lua startup
 -- startup
 
