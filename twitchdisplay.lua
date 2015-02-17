@@ -16,16 +16,16 @@
 -- Twitch Name of the Streamer
 streamid = "Bacon_Donut"
 
--- SleepTime is how often to grab new data. Set here to one minute.
--- Set it too fast and twitch will flag you for spam
--- and stop giving you data
-SleepTime = 60
-
+-- Set the Y line for where you want the different bits to go.
 line_streamer = 1
 line_followers = 3
 line_follower = 4
 line_viewers = 5
 
+-- SleepTime is how often to grab new data. Set here to one minute.
+-- Set it too fast and twitch will flag you for spam
+-- and stop giving you data
+SleepTime = 60
 
 -- Check to see if the JSON api exists. Otherwise, download it. 
 if not fs.exists('json') then
