@@ -75,8 +75,9 @@ function getTargets()
   players = {}
   for _, radar in pairs (radars) do
     for _, player in pairs (radar.getPlayers()) do
-      playerlocation = radar.getPlayerByName(player.name).position
-      player['location'] = math.floor(playerlocation.x) .. "," .. math.floor(playerlocation.y) .. "," .. math.floor(playerlocation.z)
+--      This currently reports relitive to the radar not the world. 
+--      playerlocation = radar.getPlayerByName(player.name).position
+--      player['location'] = math.floor(playerlocation.x) .. "," .. math.floor(playerlocation.y) .. "," .. math.floor(playerlocation.z)
       table.insert(players,player)
     end
   end
@@ -104,7 +105,7 @@ function Monitor_Target(newplayers)
   i=1
   for k,v in pairs(newplayers) do
     monitor.setCursorPos(1,i)
-    monitor.write("Player Detected: " .. v.name .. " - " .. v.location)
+    monitor.write("Player Detected: " .. v.name) --  .. " - " .. v.location)
     i=i+1
   end
 end
