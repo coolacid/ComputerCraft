@@ -11,7 +11,6 @@ use_glasses = true
 -- Show current server time on glasses
 glasses_time = true
 
-
 local radars = {}
 
 for _, name in pairs(peripheral.getNames()) do
@@ -21,9 +20,8 @@ for _, name in pairs(peripheral.getNames()) do
   end
 end
 
-function start() 
+function init() 
   if use_glasses then
-    local lines = {}
     glass = peripheral.wrap("right") -- Where the Glasses Controller is
     glass.clear()
     if glasses_time then
@@ -79,8 +77,10 @@ function getTargets()
       table.insert(players,player)
     end
   end
-  newplayers = deDupe(players)
-  ClearLines()
+  return deDupe(players)
+end
+
+function Glasses_Targets(newplayers)
   for k,v in pairs(newplayers) do
     if lines[i] == nil then
       lines[i] = glass.addText(5,i,"Player Detected: " .. v.name, 0xFF0000)
@@ -93,10 +93,12 @@ end
 
 function start()
   while true do
-    getTargets()
+    targets = getTargets()
     if use_glasses then
       if glasses_time then
         timeDis()
+        ClearLines()
+        Glasses_Targets(targets)
       end
       glass.sync()
     end
@@ -104,4 +106,5 @@ function start()
   end
 end
 
+init()
 start()
