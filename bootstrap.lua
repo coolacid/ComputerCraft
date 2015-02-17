@@ -1,6 +1,6 @@
 --[[
 
-turtle bootstrap
+Coolacid's bootstrap
 
 simple program to get a bunch of other programs in one run
 of 'pastebin get'
