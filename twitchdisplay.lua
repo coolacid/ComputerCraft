@@ -1,12 +1,11 @@
--- Written By Bacon_Donut
+-- Written By CoolAcid
+-- https://github.com/coolacid/ComputerCraft
+
+-- Based on the original work by bacon_donut
+-- http://pastebin.com/vhn1z23v
 -- http://twitch.tv/bacon_donut
--- API call updated by @darkgoldblade on twitter
 
--- View all my public pastebin codes at:
--- http://pastebin.com/u/bacon_donut
-
--- This is formatted to fit on a 1x3 wall of Advanced Monitors
--- with an Advanced Computer on the left side.
+-- This is formatted to fit on a 1x3 wall of Advanced Monitors with an Advanced Computer connected to a side
 -- To get this to work you need to edit the streamid variable then run these four commands:
 
 -- label set SomeKindOfNameHere
@@ -14,15 +13,8 @@
 -- github get coolacid/ComputerCraft/master/twitchdisplay.lua startup
 -- startup
 
--- ChangeLog:
--- Feb 16, 2015 - @CoolAcid
--- Added automatic download of JSON parser
--- Fixed the offline streamer detection
--- Added last follower option
-
 -- Twitch Name of the Streamer
 streamid = "Bacon_Donut"
-
 
 -- SleepTime is how often to grab new data. Set here to one minute.
 -- Set it too fast and twitch will flag you for spam
@@ -49,11 +41,11 @@ end
 
 function getViewerCount()
   str = http.get("https://api.twitch.tv/kraken/streams/" .. streamid).readAll()
-  lobj = json.decode(str)
-  if lobj.stream == nil then
+  obj = json.decode(str)
+  if obj.stream == nil then
     return nil
   else
-    return json.encodePretty(lobj.stream.viewers)
+    return json.encodePretty(obj.stream.viewers)
   end
 end
 
