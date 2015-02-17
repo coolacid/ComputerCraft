@@ -11,16 +11,15 @@ Bootstrap and download a bunch of libraries. Makes getting started faster
 MultiSensors
 ------------
 
-Detect players in your area by placing multiple sensors connected to an advanced computer via modems and network cables. 
+Detect players in your area by placing multiple sensors connected to an advanced computer via modems and network cables
 - Place as many sensors as you see fit. 
 - Displays on a Glasses Controller / Terminal Glasses HUD
 
 Twitchdisplay
 -------------
 
-Display twitch statistics in game. Originally by Bacon_Donut and rewriten. 
-- Currently the Bacon_Donut version, but planning on some rewrites
-
+Display twitch statistics in game
+- Originally by Bacon_Donut and rewriten
 
 
 # Other noteworthy Repos to Follow
