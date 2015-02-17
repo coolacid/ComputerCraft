@@ -75,8 +75,8 @@ function getTargets()
   players = {}
   for _, radar in pairs (radars) do
     for _, player in pairs (radar.getPlayers()) do
-      playerlocation = radar.getPlayerByName(player).position
-      player['location'] = playerdata.x
+      playerlocation = radar.getPlayerByName(player.name).position
+      player['location'] = round(playerlocation.x) .. "," round(playerlocation.y) .. "," .. round(playerlocation.z)
       table.insert(players,player)
     end
   end
@@ -104,7 +104,7 @@ function Monitor_Target(newplayers)
   i=1
   for k,v in pairs(newplayers) do
     monitor.setCursorPos(1,i)
-    monitor.write("Player Detected: " .. v.name)
+    monitor.write("Player Detected: " .. v.name .. " - " .. v.location)
     i=i+1
   end
 end
