@@ -65,8 +65,9 @@ while true do
 
   if status then 
     m.setCursorPos(1,1)
-    if live == nil
+    if live == nil then
       m.setBackgroundColor(colors.white)
+      m.clear()
       m.write(streamid)
       m.setCursorPos(1,5)  
       m.write("Live Viewers: Offline")
@@ -76,6 +77,7 @@ while true do
       m.write(streamid)
       m.setCursorPos(1,5)
       m.write("Live Viewers: " .. live)
+    end
   end
 
   local status, followers, follower = pcall(getFollowers)
