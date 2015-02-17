@@ -10,8 +10,8 @@
 -- To get this to work you need to edit the streamid variable then run these four commands:
 
 -- label set SomeKindOfNameHere
--- pastebin get 4nRg9CHU json
--- pastebin get vhn1z23v startup
+-- pastebin get WdiT6sR5 bootstrap
+-- github get coolacid/ComputerCraft/master/twitchdisplay.lua startup
 -- startup
 
 -- ChangeLog:
@@ -29,6 +29,7 @@ streamid = "Bacon_Donut"
 -- and stop giving you data
 SleepTime = 60
 
+-- Check to see if the JSON api exists. Otherwise, download it. 
 if not fs.exists('json') then
 	write("JSON API not found - Downloading")
 	shell.run("pastebin get 4nRg9CHU json")
