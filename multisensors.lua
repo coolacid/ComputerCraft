@@ -22,7 +22,7 @@ end
 
 if use_glasses then
   lines = {}
-  glass = peripheral.wrap("right") -- Where the Glasses Controller is
+  glass = peripheral.find("openperipheral_bridge")
   glass.clear()
   if glasses_time then
     glasstime = glass.addText(5,2,"Time: ", 0xFF0000)
