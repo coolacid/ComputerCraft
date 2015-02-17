@@ -21,12 +21,15 @@ for _, name in pairs(peripheral.getNames()) do
 end
 
 if use_glasses then
+  -- Setup to find and use the glasses bridge
   lines = {}
   glass = peripheral.find("openperipheral_bridge")
   glass.clear()
   if glasses_time then
     glasstime = glass.addText(5,2,"Time: ", 0xFF0000)
   end
+else
+  monitor = peripheral.find("monitor")
 end
 
 -- Ripped from http://stackoverflow.com/a/1283608
@@ -94,6 +97,16 @@ function Glasses_Targets(newplayers)
   end
 end
 
+function Monitor_Target(newplayers)
+  monitor.clear()
+  i=1
+  for k,v in pairs(newplayers) do
+    monitor.setCursorPos(1,i)
+    monitor.write("Player Detected: " .. v.name)
+    i=i+1
+  end
+end
+
 function start()
   while true do
     targets = getTargets()
@@ -104,6 +117,8 @@ function start()
       ClearLines()
       Glasses_Targets(targets)
       glass.sync()
+    else
+      Monitor_Target(targets)
     end
     sleep(0.1)
   end
