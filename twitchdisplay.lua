@@ -70,6 +70,12 @@ while true do
       m.setCursorPos(1,5)
       m.write("Live Viewers: " .. live)
     end
+  else
+      m.setBackgroundColor(colors.white)
+      m.clear()
+      m.write(streamid)
+      m.setCursorPos(1,5)
+      m.write("Live Viewers: ERROR")
   end
 
   local status, followers, follower = pcall(getFollowers)
