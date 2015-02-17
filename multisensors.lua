@@ -79,7 +79,11 @@ function getTargets()
 end
 
 function Glasses_Targets(newplayers)
-  i=10
+  if glasses_time then
+    i=10
+  else 
+    i=1
+  end
   for k,v in pairs(newplayers) do
     if lines[i] == nil then
       lines[i] = glass.addText(5,i,"Player Detected: " .. v.name, 0xFF0000)
