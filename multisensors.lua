@@ -5,18 +5,30 @@
 -- Place a new Sensor on top of the cable, and attach a modem
 -- Click on the modem to activate it on the network
 
-glass = peripheral.wrap("right") -- Where the Glasses Controller is
-glass.clear()
+-- Use Glasses instead of a monitor
+use_glasses = true
+
+-- Show current server time on glasses
+glasses_time = true
+
 
 local radars = {}
-local lines = {}
-
-glasstime = glass.addText(5,2,"Time: ", 0xFF0000)
 
 for _, name in pairs(peripheral.getNames()) do
   if peripheral.getType(name) == "openperipheral_sensor" then
     print ("Found: " .. name)
     table.insert(radars, peripheral.wrap(name))
+  end
+end
+
+function start() 
+  if use_glasses then
+    local lines = {}
+    glass = peripheral.wrap("right") -- Where the Glasses Controller is
+    glass.clear()
+    if glasses_time then
+      glasstime = glass.addText(5,2,"Time: ", 0xFF0000)
+    end
   end
 end
 
@@ -82,9 +94,13 @@ end
 function start()
   while true do
     getTargets()
-    timeDis()
+    if use_glasses then
+      if glasses_time then
+        timeDis()
+      end
+      glass.sync()
+    end
     sleep(0.1)
-    glass.sync()
   end
 end
 
