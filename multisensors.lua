@@ -21,8 +21,8 @@ for _, name in pairs(peripheral.getNames()) do
 end
 
 if use_glasses then
-  local lines = {}
-  local glass = peripheral.wrap("right") -- Where the Glasses Controller is
+  lines = {}
+  glass = peripheral.wrap("right") -- Where the Glasses Controller is
   glass.clear()
   if glasses_time then
     glasstime = glass.addText(5,2,"Time: ", 0xFF0000)
@@ -51,10 +51,8 @@ function timeDis()
 end
 
 function ClearLines()
-  if table.getn(lines) > 0 then
-    for k,v in pairs(lines) do
-      lines[k].setText("")
-    end
+  for k,v in pairs(lines) do
+    lines[k].setText("")
   end
 end
 
@@ -98,9 +96,9 @@ function start()
     if use_glasses then
       if glasses_time then
         timeDis()
-        ClearLines()
-        Glasses_Targets(targets)
       end
+      ClearLines()
+      Glasses_Targets(targets)
       glass.sync()
     end
     sleep(0.1)
