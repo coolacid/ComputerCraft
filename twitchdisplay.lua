@@ -40,11 +40,12 @@ local m = peripheral.find("monitor")
 m.setCursorPos(1,1)
 
 function getFollowers()
+  r = {}
   str = http.get("https://api.twitch.tv/kraken/channels/" .. streamid .. "/follows?limit=1").readAll()
   obj = json.decode(str)
-  follows = json.encodePretty(obj._total)
-  follower = json.encodePretty(obj.follows[1].user.name)
-  return follows, follower
+  r["follows"] = json.encodePretty(obj._total)
+  r["follower"] = json.encodePretty(obj.follows[1].user.name)
+  return r
 end
 
 function getViewerCount()
@@ -79,13 +80,13 @@ while true do
 
   m.write(streamid)
 
-  local follows, follower = pcall(function () getFollowers() end)
+  local status, follow = pcall(function () getFollowers() end)
   
   m.setCursorPos(1,3)  
-  m.write("Twitch Followers: " .. follows)
+  m.write("Twitch Followers: " .. follow["followers"])
 
   m.setCursorPos(1,4)
-  m.write("Last Follower: " .. follower)
+  m.write("Last Follower: " .. follow["follower"])
 
   m.setCursorPos(1,5)  
   local status, live = pcall(function () getViewerCount() end)
