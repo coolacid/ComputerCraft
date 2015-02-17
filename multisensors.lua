@@ -20,13 +20,12 @@ for _, name in pairs(peripheral.getNames()) do
   end
 end
 
-function init() 
-  if use_glasses then
-    glass = peripheral.wrap("right") -- Where the Glasses Controller is
-    glass.clear()
-    if glasses_time then
-      glasstime = glass.addText(5,2,"Time: ", 0xFF0000)
-    end
+if use_glasses then
+  local lines = {}
+  local glass = peripheral.wrap("right") -- Where the Glasses Controller is
+  glass.clear()
+  if glasses_time then
+    glasstime = glass.addText(5,2,"Time: ", 0xFF0000)
   end
 end
 
@@ -52,8 +51,10 @@ function timeDis()
 end
 
 function ClearLines()
-  for k,v in pairs(lines) do
-    lines[k].setText("")
+  if table.getn(lines) > 0 then
+    for k,v in pairs(lines) do
+      lines[k].setText("")
+    end
   end
 end
 
@@ -71,7 +72,6 @@ end
 
 function getTargets()
   players = {}
-  i=10
   for _, radar in pairs (radars) do
     for _, player in pairs (radar.getPlayers()) do
       table.insert(players,player)
@@ -81,6 +81,7 @@ function getTargets()
 end
 
 function Glasses_Targets(newplayers)
+  i=10
   for k,v in pairs(newplayers) do
     if lines[i] == nil then
       lines[i] = glass.addText(5,i,"Player Detected: " .. v.name, 0xFF0000)
@@ -106,5 +107,4 @@ function start()
   end
 end
 
-init()
 start()
