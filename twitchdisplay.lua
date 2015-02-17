@@ -36,7 +36,7 @@ if not fs.exists('json') then
 end
 
 os.loadAPI("json")
-local m = peripheral.wrap("right")
+local m = peripheral.find("monitor")
 m.setCursorPos(1,1)
 
 function getFollowers()
