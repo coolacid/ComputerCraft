@@ -21,15 +21,20 @@ streamid = "Bacon_Donut"
 -- and stop giving you data
 SleepTime = 60
 
+line_streamer = 1
+line_followers = 3
+line_follower = 4
+line_viewers = 5
+
+
 -- Check to see if the JSON api exists. Otherwise, download it. 
 if not fs.exists('json') then
-	write("JSON API not found - Downloading")
+	print("JSON API not found - Downloading")
 	shell.run("pastebin get 4nRg9CHU json")
 end
 
 os.loadAPI("json")
 local m = peripheral.find("monitor")
-m.setCursorPos(1,1)
 
 function getFollowers()
   str = http.get("https://api.twitch.tv/kraken/channels/" .. streamid .. "/follows?limit=1").readAll()
@@ -56,41 +61,41 @@ while true do
   local status, live = pcall(getViewerCount)
 
   if status then 
-    m.setCursorPos(1,1)
+    m.setCursorPos(1,line_streamer)
     if live == nil then
       m.setBackgroundColor(colors.white)
       m.clear()
       m.write(streamid)
-      m.setCursorPos(1,5)  
+      m.setCursorPos(1,line_viewers)  
       m.write("Live Viewers: Offline")
     else
       m.setBackgroundColor(colors.yellow)
       m.clear()
       m.write(streamid)
-      m.setCursorPos(1,5)
+      m.setCursorPos(1,line_viewers)
       m.write("Live Viewers: " .. live)
     end
   else
       m.setBackgroundColor(colors.white)
       m.clear()
       m.write(streamid)
-      m.setCursorPos(1,5)
+      m.setCursorPos(1,line_viewers)
       m.write("Live Viewers: ERROR")
   end
 
   local status, followers, follower = pcall(getFollowers)
 
   if status then
-    m.setCursorPos(1,3)  
+    m.setCursorPos(1,line_followers)  
     m.write("Twitch Followers: " .. followers)
 
-    m.setCursorPos(1,4)
+    m.setCursorPos(1,line_follower)
     m.write("Last Follower: " .. follower)
   else
-    m.setCursorPos(1,3)  
+    m.setCursorPos(1,line_followers)  
     m.write("Twitch Followers: ERROR")
 
-    m.setCursorPos(1,4)
+    m.setCursorPos(1,line_follower)
     m.write("Last Follower: ERROR")
   end
 
