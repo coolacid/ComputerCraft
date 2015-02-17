@@ -76,7 +76,7 @@ function getTargets()
   for _, radar in pairs (radars) do
     for _, player in pairs (radar.getPlayers()) do
       playerlocation = radar.getPlayerByName(player.name).position
-      player['location'] = round(playerlocation.x) .. "," round(playerlocation.y) .. "," .. round(playerlocation.z)
+      player['location'] = math.floor(playerlocation.x) .. "," .. math.floor(playerlocation.y) .. "," .. math.floor(playerlocation.z)
       table.insert(players,player)
     end
   end
