@@ -1,6 +1,6 @@
 -- By @Coolacid
 -- Detect players and display their name on a monitor or a Glass Hud
--- Multiple Sensors using modems and network cable
+-- Multiple Sensors using modems and network cable - Sensors by default detect in a 5x5x5 area
 -- Place a modem on the Advanced Computer, then apply network cable to your locations
 -- Place a new Sensor on top of the cable, and attach a modem
 -- Click on the modem to activate it on the network

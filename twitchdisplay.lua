@@ -37,6 +37,9 @@ end
 os.loadAPI("json")
 local m = peripheral.find("monitor")
 
+m.setTextColor(colors.blue)
+m.setTextScale(1)
+
 function getFollowers()
   str = http.get("https://api.twitch.tv/kraken/channels/" .. streamid .. "/follows?limit=1").readAll()
   obj = json.decode(str)
@@ -56,9 +59,6 @@ function getViewerCount()
 end
 
 while true do
-  m.setTextColor(colors.blue)
-  m.setTextScale(1)
-
   local status, live = pcall(getViewerCount)
 
   if status then 
