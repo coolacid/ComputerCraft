@@ -46,6 +46,7 @@ function centerText(m, text, dy)
   else
     local x,y = m.getSize()
     m.setCursorPos(math.ceil((x/2) - (text:len() / 2)), dy)
+  end
 end
 
 while true do
