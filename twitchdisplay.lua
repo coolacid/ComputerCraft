@@ -35,6 +35,7 @@ if not fs.exists('json') then
 end
 
 os.loadAPI("json")
+
 local m = peripheral.find("monitor")
 
 m.setTextColor(colors.blue)
