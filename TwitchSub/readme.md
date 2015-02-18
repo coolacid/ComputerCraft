@@ -12,14 +12,23 @@ This project is set to fix that. This is a two part project:
 # NOTE
 Since I don't have a subscriber button, and twitch doesn't have a test account for devs, I can't fully code the proxy. :(
 
-tsproxy.js
+nodejs/index.js
 ----------
 
 Node.js proxy to handle the OAUTH requests. 
 
-You need to set who you want to accept and their OAUTH keys. Secondly, define what IPs are allowned to access the proxy.
+You need to set who you want to accept and their OAUTH keys. 
+Secondly, define what IPs are allowed to access the proxy.
+
+This is intended to be run either standalone on a server, or one can run it on heroku.com
 
 subdisplay.lua
 --------------
 
-Displays the last sub, currently left justified on line 1.
+Displays the last sub
+
+submulti.lua
+------------
+
+Displays the last X subs to a monitor.
+Limited by the size of the monitor, and limits set by proxy API call (default 25)
