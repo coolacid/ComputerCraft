@@ -44,7 +44,8 @@ function getSubs()
   local subs = {}
   for _,k in pairs(obj.subscriptions) do
      local sub = json.encodePretty(k.user.display_name)
-     table.insert(subs, sub:gsub('"', ''))
+     sub = sub:gsub('"', '')
+     table.insert(subs, sub)
   end
   return subs
 end
@@ -58,8 +59,8 @@ while true do
   m.write("Last Subs:")
 
   if status then 
-    i=2
-    for _,k in pairs (subs) do
+    y=2
+    for _,sub in pairs (subs) do
       text = "Last Sub: " .. sub
       if center then
         functions.centerText(m,text,y)
@@ -67,14 +68,13 @@ while true do
         m.setCursorPos(1,y)
       end
     m.write(text)
-    i=i+1
+    y=y+1
     end
   else
-    m.setCursorPos(1,1)
+    m.setCursorPos(1,2)
     text = "ERROR"
     m.write(text)
   end
-
 
   sleep(SleepTime)
 end
