@@ -10,6 +10,9 @@
 -- Twitch Name of the Streamer
 proxyurl = "http://localhost:1337/waffle"
 
+-- Center Display
+center = true
+
 -- SleepTime is how often to grab new data. Set here to one minute.
 -- Set it too fast and twitch will flag you for spam
 -- and stop giving you data
@@ -36,16 +39,27 @@ function getSubs()
   return lastsub
 end
 
+function centerText(m, text)
+  local x,y m.getSize()
+  m.setCursorPos(math.ceil((x/2) - (text:len() / 2)), math.ceil(y/2))
+end
+
 while true do
   local status, lastsub = pcall(getSubs)
 
-  m.clear()
-  m.setCursorPos(1,1)
   if status then 
-    m.write("Last Sub: " .. lastsub)
+    text = "Last Sub: " .. lastsub
   else
-    m.write("Last Sub: ERROR")
+    text = "Last Sub: ERROR"
   end
+
+  m.clear()
+  if center then
+    centerText(m,text)
+  else 
+    m.setCursorPos(1,1)
+  end
+  m.write(text)
 
   sleep(SleepTime)
 end
