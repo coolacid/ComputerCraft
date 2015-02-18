@@ -39,9 +39,13 @@ function getSubs()
   return lastsub
 end
 
-function centerText(m, text)
-  local x,y m.getSize()
-  m.setCursorPos(math.ceil((x/2) - (text:len() / 2)), math.ceil(y/2))
+function centerText(m, text, dy)
+  if dy == nil
+    local x,y=m.getSize()
+    m.setCursorPos(math.ceil((x/2) - (text:len() / 2)), math.ceil(y/2))
+  else
+    local x,y = m.getSize()
+    m.setCursorPos(math.ceil((x/2) - (text:len() / 2)), dy)
 end
 
 while true do
