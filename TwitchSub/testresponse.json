@@ -42,6 +42,82 @@
       "_links": {
         "self": "https://api.twitch.tv/kraken/channels/test_channel/subscriptions/testuser"
       }
+    },
+    {
+      "_id": "8d4621871b7274ccoolacidb5dad6780c8533318",
+      "user": {
+        "_id": 38248673,
+        "logo": null,
+        "staff": false,
+        "created_at": "2014-11-06T00:32:36Z",
+        "name": "testuser",
+        "updated_at": "2013-02-06T21:27:46Z",
+        "display_name": "coolacid1",
+        "_links": {
+          "self": "https://api.twitch.tv/kraken/users/coolacid"
+        }
+      },
+      "created_at": "2013-02-06T21:33:33Z",
+      "_links": {
+        "self": "https://api.twitch.tv/kraken/channels/test_channel/subscriptions/testuser"
+      }
+    },
+    {
+      "_id": "8d4621871b7274ccoolacidb5dad6780c8533318",
+      "user": {
+        "_id": 38248673,
+        "logo": null,
+        "staff": false,
+        "created_at": "2014-11-06T00:32:36Z",
+        "name": "testuser",
+        "updated_at": "2013-02-06T21:27:46Z",
+        "display_name": "coolacid2",
+        "_links": {
+          "self": "https://api.twitch.tv/kraken/users/coolacid"
+        }
+      },
+      "created_at": "2013-02-06T21:33:33Z",
+      "_links": {
+        "self": "https://api.twitch.tv/kraken/channels/test_channel/subscriptions/testuser"
+      }
+    },
+    {
+      "_id": "8d4621871b7274ccoolacidb5dad6780c8533318",
+      "user": {
+        "_id": 38248673,
+        "logo": null,
+        "staff": false,
+        "created_at": "2014-11-06T00:32:36Z",
+        "name": "testuser",
+        "updated_at": "2013-02-06T21:27:46Z",
+        "display_name": "coolacid3",
+        "_links": {
+          "self": "https://api.twitch.tv/kraken/users/coolacid"
+        }
+      },
+      "created_at": "2013-02-06T21:33:33Z",
+      "_links": {
+        "self": "https://api.twitch.tv/kraken/channels/test_channel/subscriptions/testuser"
+      }
+    },
+    {
+      "_id": "8d4621871b7274ccoolacidb5dad6780c8533318",
+      "user": {
+        "_id": 38248673,
+        "logo": null,
+        "staff": false,
+        "created_at": "2014-11-06T00:32:36Z",
+        "name": "testuser",
+        "updated_at": "2013-02-06T21:27:46Z",
+        "display_name": "coolacid4",
+        "_links": {
+          "self": "https://api.twitch.tv/kraken/users/coolacid"
+        }
+      },
+      "created_at": "2013-02-06T21:33:33Z",
+      "_links": {
+        "self": "https://api.twitch.tv/kraken/channels/test_channel/subscriptions/testuser"
+      }
     }
   ]
 }
