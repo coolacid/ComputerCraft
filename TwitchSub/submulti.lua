@@ -11,7 +11,7 @@
 proxyurl = "http://localhost:1337/waffle"
 
 -- Center Display
-center = true
+center = false
 
 -- SleepTime is how often to grab new data. Set here to one minute.
 -- Set it too fast and twitch will flag you for spam
@@ -61,13 +61,12 @@ while true do
   if status then 
     y=2
     for _,sub in pairs (subs) do
-      text = "Last Sub: " .. sub
       if center then
-        functions.centerText(m,text,y)
+        functions.centerText(m,sub,y)
       else 
         m.setCursorPos(1,y)
       end
-    m.write(text)
+    m.write(sub)
     y=y+1
     end
   else
