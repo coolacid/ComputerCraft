@@ -24,6 +24,12 @@ if not fs.exists('json') then
 	shell.run("pastebin get 4nRg9CHU json")
 end
 
+if not fs.exists('functions') then
+	print("JSON API not found - Downloading")
+	shell.run("github get coolacid/ComputerCraft/master/functions.lua functions")
+end
+
+
 os.loadAPI("json")
 local m = peripheral.find("monitor")
 
@@ -37,16 +43,6 @@ function getSubs()
   lastsub = json.encodePretty(obj.subscriptions[1].user.display_name)
   lastsub = lastsub:gsub('"', '')
   return lastsub
-end
-
-function centerText(m, text, dy)
-  if dy == nil then
-    local x,y=m.getSize()
-    m.setCursorPos(math.ceil((x/2) - (text:len() / 2)), math.ceil(y/2))
-  else
-    local x,y = m.getSize()
-    m.setCursorPos(math.ceil((x/2) - (text:len() / 2)), dy)
-  end
 end
 
 while true do
