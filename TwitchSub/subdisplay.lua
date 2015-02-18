@@ -25,12 +25,13 @@ if not fs.exists('json') then
 end
 
 if not fs.exists('functions') then
-	print("JSON API not found - Downloading")
+	print("functions not found - Downloading")
 	shell.run("github get coolacid/ComputerCraft/master/functions.lua functions")
 end
 
-
 os.loadAPI("json")
+os.loadAPI("functions")
+
 local m = peripheral.find("monitor")
 
 m.setTextColor(colors.blue)
@@ -56,7 +57,7 @@ while true do
 
   m.clear()
   if center then
-    centerText(m,text)
+    functions.centerText(m,text)
   else 
     m.setCursorPos(1,1)
   end
