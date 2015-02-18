@@ -33,6 +33,7 @@ function getSubs()
   str = http.get(proxyurl).readAll()
   obj = json.decode(str)
   lastsub = json.encodePretty(obj.subscriptions[1].user.display_name)
+  lastsub = lastsub:gsub('"', '')
   return lastsub
 end
 
