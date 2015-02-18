@@ -1,0 +1,22 @@
+{
+  "name": "TwitchSubs",
+  "version": "0.1.0",
+  "description": "A sample Node.js proxy for getting twitch subs. For use with ComputerCraft",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coolacid/ComputerCraft/tree/master/TwitchSub"
+  },
+  "keywords": [
+    "node",
+    "minecraft",
+    "computercraft"
+  ],
+  "license": "MIT"
+}
