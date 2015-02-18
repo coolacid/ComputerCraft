@@ -27,7 +27,6 @@ local m = peripheral.find("monitor")
 m.setTextColor(colors.blue)
 m.setTextScale(1)
 m.setBackgroundColor(colors.white)
-m.clear()
 
 function getSubs()
   str = http.get(proxyurl).readAll()
@@ -40,6 +39,7 @@ end
 while true do
   local status, lastsub = pcall(getSubs)
 
+  m.clear()
   m.setCursorPos(1,1)
   if status then 
     m.write("Last Sub: " .. lastsub)
