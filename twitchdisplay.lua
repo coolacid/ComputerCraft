@@ -45,6 +45,7 @@ function getFollowers()
   obj = json.decode(str)
   follows = json.encodePretty(obj._total)
   follower = json.encodePretty(obj.follows[1].user.name)
+  follower = follower:gsub('"', '')
   return follows, follower
 end
 
