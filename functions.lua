@@ -8,7 +8,7 @@ function centerText(m, text, dy)
   center = math.ceil((x/2) - (text:len() / 2))
   if dy == nil then
     m.setCursorPos(center, math.ceil(y/2))
-  else dy > 0 then
+  elseif dy > 0 then
     local x,y = m.getSize()
     m.setCursorPos(center, dy)
   end
