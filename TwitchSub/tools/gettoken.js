@@ -29,6 +29,6 @@ function httpHandler(req, res) {
         res.end('Token should be in your URL above')
     } else {
         res.writeHead(200, {'Content-Type': 'text/html'});
-        res.end('<a href="https://api.twitch.tv/kraken/oauth2/authorize?response_type=token&client_id=' + clientid + '&redirect_uri=http://' + hostname + '/token&scope=channel_subscriptions">start here</a> - This will create an OAUTH token for the proxy. This token will NOT be sent to the server and must be provided using alternaitve methods.');
+        res.end('<a href="https://api.twitch.tv/kraken/oauth2/authorize?response_type=token&client_id=' + clientid + '&redirect_uri=http://localhost&scope=channel_subscriptions">start here</a> - This will create an OAUTH token for the proxy. <BR>Twitch will redirect to localhost with the OAUTH token in the URL. <BR>This needs to be provided using alternaitve methods.');
     }
 }
