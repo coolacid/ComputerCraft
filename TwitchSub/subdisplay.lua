@@ -4,11 +4,11 @@
 -- label set SomeKindOfNameHere
 -- pastebin get WdiT6sR5 bootstrap
 -- bootstrap
--- github get coolacid/ComputerCraft/master/subdisplay.lua startup
+-- github get coolacid/ComputerCraft/master/TwitchSub/subdisplay.lua startup
 -- startup
 
 -- Twitch Name of the Streamer
-proxyurl = "http://http://localhost:1337/waffle"
+proxyurl = "http://localhost:1337/waffle"
 
 -- SleepTime is how often to grab new data. Set here to one minute.
 -- Set it too fast and twitch will flag you for spam
@@ -32,7 +32,7 @@ m.clear()
 function getSubs()
   str = http.get(proxyurl).readAll()
   obj = json.decode(str)
-  lastsub = json.encodePretty(obj.subscriptions.user.display_name)
+  lastsub = json.encodePretty(obj.subscriptions[0].user.display_name)
   return lastsub
 end
 
@@ -41,7 +41,7 @@ while true do
 
   m.setCursorPos(1,1)
   if status then 
-    m.write(lastsub)
+    m.write("Last Sub: " .. lastsub)
   else
     m.write("Last Sub: ERROR")
   end
