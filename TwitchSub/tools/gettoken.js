@@ -1,5 +1,5 @@
 
-var port = 5000
+var port = (process.env.PORT || 5000)
 
 var clientid = "" // Set this to your client id from an application -- http://www.twitch.tv/settings/connections
 

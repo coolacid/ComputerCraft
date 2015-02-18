@@ -1,0 +1,22 @@
+{
+  "name": "TwitchSubsOAUTH",
+  "version": "0.1.0",
+  "description": "A sample Node.js script to get the required OAUTH token for TwitchSubs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node gettoken.js"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coolacid/ComputerCraft/tree/master/TwitchSub"
+  },
+  "keywords": [
+    "node",
+    "minecraft",
+    "computercraft"
+  ],
+  "license": "MIT"
+}
