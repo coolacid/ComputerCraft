@@ -7,7 +7,8 @@
 -- label set Tester
 -- pastebin get WdiT6sR5 bootstrap
 -- bootstrap
--- github get coolacid/ComputerCraft/master/tester.lua tester
+-- github get coolacid/ComputerCraft/master/tester.lua startup
+
 
 me = peripheral.getMethods("back")
 if me then
