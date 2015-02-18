@@ -1,5 +1,5 @@
 
-var port = 1337
+var port = (process.env.PORT || 5000)
 
 var OAUTHKeys = {
     waffle: "test",
@@ -24,12 +24,18 @@ console.log('Server running at on port: ' + port);
 function httpHandler(req, res) {
     url = require('url').parse(req.url);
     base = path.basename(url.pathname);
-    remoteip = req.connection.remoteAddress
+    var ipAddr = req.headers["x-forwarded-for"];
+    if (ipAddr){
+      var list = ipAddr.split(",");
+      remoteip = list[list.length-1];
+    } else {
+      remoteip = req.connection.remoteAddress;
+    }
     console.log("request received from: " + remoteip)
     // Check to see if the remote IP is allowed
     if (ips.indexOf(remoteip) < 0) {
         res.writeHead(300, {'Content-Type': 'text/plain'});
-        res.end('Not vaild IP\n');
+        res.end('Not vaild IP');
     // If we have the OAUTH Key defined above, we're good to go. 
     } else if (base in OAUTHKeys) {
         res.writeHead(200, {'Content-Type': 'application/json'});
