@@ -10,7 +10,7 @@ This project is set to fix that. This is a two part project:
 - Some node.js code to act as a proxy
 
 # NOTE
-Since I don't have a subscriber button, and twitch doesn't have a test account for devs, I can't continue this code. 
+Since I don't have a subscriber button, and twitch doesn't have a test account for devs, I can't fully code the proxy. :(
 
 tsproxy.js
 ----------
