@@ -15,6 +15,23 @@ Detect players in your area by placing multiple sensors connected to an advanced
 - Place as many sensors as you see fit. 
 - Displays on a Glasses Controller / Terminal Glasses HUD
 
+ViewerAlarm?.lua
+----------------
+
+ViewerAlarm scripts are two different view alarms. It watches the twitch API for a viewer count.
+- Alarm1 will emit a constant signal once count is it until you send a reset redstone signal
+- Alarm2 will emit for X seconds then wait for a reset redstone signal
+
+tester.lua
+----------
+
+There are LOTS of different blocks you can use with CC. This will output methods of whatever is on the back of the computer
+
+functions.lua
+-------------
+
+Just a bunch of functions that I use in different scripts. Write once, use many. 
+
 Twitchdisplay
 -------------
 
