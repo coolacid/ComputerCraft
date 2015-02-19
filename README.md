@@ -8,6 +8,11 @@ Bootstrap and download a bunch of libraries. Makes getting started faster
 - Original: https://github.com/seriallos/computercraft/blob/master/bootstrap.lua
 - Start with: pastebin get WdiT6sR5 bootstrap
 
+functions.lua
+-------------
+
+Just a bunch of functions that I use in different scripts. Write once, use many. 
+
 MultiSensors
 ------------
 
@@ -26,11 +31,6 @@ tester.lua
 ----------
 
 There are LOTS of different blocks you can use with CC. This will output methods of whatever is on the back of the computer
-
-functions.lua
--------------
-
-Just a bunch of functions that I use in different scripts. Write once, use many. 
 
 Twitchdisplay
 -------------
