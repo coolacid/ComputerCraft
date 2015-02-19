@@ -1,0 +1,132 @@
+ender_tank
+1 | getTankInfo
+2 | getColors
+3 | listMethods
+4 | setColours
+5 | getColours
+6 | getFrequency
+7 | setColorNames
+8 | getAdvancedMethodsData
+9 | setColors
+10 | listSources
+11 | setFrequency
+12 | getColorNames
+listSources: 
+  returnTypes: 
+    1: TABLE
+  args: 
+  description: List all method sources
+  source: <meta>
+getFrequency: 
+  returnTypes: 
+    1: NUMBER
+  args: 
+  description: Get the frequency of this chest or tank
+  source: ender_frequency
+getColors: 
+  returnTypes: 
+    1: NUMBER
+    2: NUMBER
+    3: NUMBER
+  args: 
+  description: Get the colours active on this chest or tank
+  source: ender_frequency
+setColors: 
+  returnTypes: 
+  args: 
+    1: 
+      type: NUMBER
+      description: The first color
+      name: color_left
+    2: 
+      type: NUMBER
+      description: The second color
+      name: color_middle
+    3: 
+      type: NUMBER
+      description: The third color
+      name: color_right
+  description: Set the frequency of this chest or tank
+  source: ender_frequency
+getAdvancedMethodsData: 
+  returnTypes: 
+    1: TABLE
+  args: 
+  description: Get a complete table of information about all available methods
+  source: <meta>
+setFrequency: 
+  returnTypes: 
+  args: 
+    1: 
+      type: NUMBER
+      description: A single number that represents all three colours on this chest or tank
+      name: frequency
+  description: Set the frequency of this chest or tank
+  source: ender_frequency
+getColorNames: 
+  returnTypes: 
+    1: STRING
+    2: STRING
+    3: STRING
+  args: 
+  description: Get the colours active on this chest or tank
+  source: ender_frequency
+listMethods: 
+  returnTypes: 
+    1: STRING
+  args: 
+  description: List all the methods available
+  source: <meta>
+setColours: 
+  returnTypes: 
+  args: 
+    1: 
+      type: NUMBER
+      description: The first color
+      name: color_left
+    2: 
+      type: NUMBER
+      description: The second color
+      name: color_middle
+    3: 
+      type: NUMBER
+      description: The third color
+      name: color_right
+  description: Set the frequency of this chest or tank
+  source: ender_frequency
+getTankInfo: 
+  returnTypes: 
+    1: TABLE
+  args: 
+    1: 
+      optional: true
+      description: The internal direction of the tank. If you're not sure, use 'unknown' (north, south, east, west, up, down or unknown)
+      type: STRING
+      name: direction
+  description: A table of tanks will be returned, each with a table of information
+  source: fluid_handler
+getColours: 
+  returnTypes: 
+    1: NUMBER
+    2: NUMBER
+    3: NUMBER
+  args: 
+  description: Get the colours active on this chest or tank
+  source: ender_frequency
+setColorNames: 
+  returnTypes: 
+  args: 
+    1: 
+      type: STRING
+      description: 
+      name: color_left
+    2: 
+      type: STRING
+      description: 
+      name: color_middle
+    3: 
+      type: STRING
+      description: 
+      name: color_right
+  description: Set the frequency of this chest or tank
+  source: ender_frequency

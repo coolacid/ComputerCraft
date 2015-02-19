@@ -1,0 +1,34 @@
+drum
+1 | getTankInfo
+2 | listMethods
+3 | getAdvancedMethodsData
+4 | listSources
+listSources: 
+  returnTypes: 
+    1: TABLE
+  args: 
+  description: List all method sources
+  source: <meta>
+getAdvancedMethodsData: 
+  returnTypes: 
+    1: TABLE
+  args: 
+  description: Get a complete table of information about all available methods
+  source: <meta>
+listMethods: 
+  returnTypes: 
+    1: STRING
+  args: 
+  description: List all the methods available
+  source: <meta>
+getTankInfo: 
+  returnTypes: 
+    1: TABLE
+  args: 
+    1: 
+      optional: true
+      description: The internal direction of the tank. If you're not sure, use 'unknown' (north, south, east, west, up, down or unknown)
+      type: STRING
+      name: direction
+  description: A table of tanks will be returned, each with a table of information
+  source: fluid_handler

@@ -1,0 +1,16 @@
+monitor
+1 | write
+2 | scroll
+3 | setCursorPos
+4 | setCursorBlink
+5 | getCursorPos
+6 | getSize
+7 | clear
+8 | clearLine
+9 | setTextScale
+10 | setTextColour
+11 | setTextColor
+12 | setBackgroundColour
+13 | setBackgroundColor
+14 | isColour
+15 | isColor
