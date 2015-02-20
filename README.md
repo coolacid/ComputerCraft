@@ -31,11 +31,6 @@ ViewerAlarm scripts are two different view alarms. It watches the twitch API for
 - Alarm1 will emit a constant signal once count is it until you send a reset redstone signal
 - Alarm2 will emit for X seconds then wait for a reset redstone signal
 
-tester.lua
-----------
-
-There are LOTS of different blocks you can use with CC. This will output methods of whatever is on the back of the computer
-
 Twitchdisplay
 -------------
 
@@ -43,6 +38,11 @@ Twitchdisplay
 
 Display twitch statistics in game
 - Originally by Bacon_Donut and rewriten
+
+tester.lua
+----------
+
+There are LOTS of different blocks you can use with CC. This will output methods of whatever is on the back of the computer
 
 
 # Other noteworthy Repos to Follow
