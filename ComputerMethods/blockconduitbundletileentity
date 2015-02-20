@@ -44,7 +44,7 @@ getMaxEnergyStored:
       type: STRING
       name: slot
   description: Get the max energy stored in the machine.
-  source: rf_receiver
+  source: rf_provider
 getEnergyStored: 
   returnTypes: 
     1: NUMBER
@@ -55,4 +55,4 @@ getEnergyStored:
       type: STRING
       name: slot
   description: Get the energy stored in the machine.
-  source: rf_receiver
+  source: rf_provider
