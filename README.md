@@ -11,7 +11,7 @@ Bootstrap and download a bunch of libraries. Makes getting started faster
 functions.lua
 -------------
 
-Just a bunch of functions that I use in different scripts. Write once, use many. 
+Just a bunch of functions that I use in different scripts. Write once, use many is good coding.
 
 MultiSensors
 ------------
@@ -19,17 +19,17 @@ MultiSensors
 ![Multisensors](https://raw.githubusercontent.com/coolacid/ComputerCraft/master/ScreenShots/Multisensors.png)
 
 Detect players in your area by placing multiple sensors connected to an advanced computer via modems and network cables
-- Place as many sensors as you see fit. 
-- Displays on a Glasses Controller / Terminal Glasses HUD
+- Place as many sensors as you see fit.
+- Display using a Glasses Controller / Terminal Glasses HUD or Advanced Monitor
 
 ViewerAlarm?.lua
 ----------------
 
 ![ViewerAlarm](https://raw.githubusercontent.com/coolacid/ComputerCraft/master/ScreenShots/TwitchAlarm.png)
 
-ViewerAlarm scripts are two different view alarms. It watches the twitch API for a viewer count.
-- Alarm1 will emit a constant signal once count is it until you send a reset redstone signal
-- Alarm2 will emit for X seconds then wait for a reset redstone signal
+ViewerAlarm scripts are two different twitch viewer alarms. It watches the twitch API for the current viewer count and emits a redstone signal when over the configured threshhold.
+- Alarm1 will emit a constant signal once count is reached until you send a reset redstone signal
+- Alarm2 will emit for X seconds then stop waiting for a reset redstone signal
 
 Twitchdisplay
 -------------
