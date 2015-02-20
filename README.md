@@ -16,12 +16,16 @@ Just a bunch of functions that I use in different scripts. Write once, use many.
 MultiSensors
 ------------
 
+(https://raw.githubusercontent.com/coolacid/ComputerCraft/master/ScreenShots/Multisensors.png)
+
 Detect players in your area by placing multiple sensors connected to an advanced computer via modems and network cables
 - Place as many sensors as you see fit. 
 - Displays on a Glasses Controller / Terminal Glasses HUD
 
 ViewerAlarm?.lua
 ----------------
+
+(https://raw.githubusercontent.com/coolacid/ComputerCraft/master/ScreenShots/TwitchAlarm.png)
 
 ViewerAlarm scripts are two different view alarms. It watches the twitch API for a viewer count.
 - Alarm1 will emit a constant signal once count is it until you send a reset redstone signal
@@ -35,6 +39,8 @@ There are LOTS of different blocks you can use with CC. This will output methods
 Twitchdisplay
 -------------
 
+(https://raw.githubusercontent.com/coolacid/ComputerCraft/master/ScreenShots/TwitchDisplay.png)
+
 Display twitch statistics in game
 - Originally by Bacon_Donut and rewriten
 
@@ -43,3 +49,6 @@ Display twitch statistics in game
 
 - https://github.com/seriallos/computercraft
 
+# Tip Jar
+
+https://gist.github.com/coolacid/9537573
