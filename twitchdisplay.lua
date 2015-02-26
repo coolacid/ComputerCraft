@@ -23,6 +23,16 @@ line_followers = 3
 line_follower = 4
 line_viewers = 5
 
+-- Set Justification
+-- 1 - Left
+-- 2 - Center
+-- 3 - Right
+
+justify_streamer = 1
+justify_followers = 1
+justify_follower = 1
+justify_viewers = 1
+
 -- SleepTime is how often to grab new data. Set here to one minute.
 -- Set it too fast and twitch will flag you for spam
 -- and stop giving you data
@@ -34,7 +44,13 @@ if not fs.exists('json') then
 	shell.run("pastebin get 4nRg9CHU json")
 end
 
+if not fs.exists('functions') then
+	print("JSON API not found - Downloading")
+	shell.run("github get coolacid/ComputerCraft/master/functions.lua functions")
+end
+
 os.loadAPI("json")
+os.loadAPI("functions")
 
 local m = peripheral.find("monitor")
 
@@ -58,6 +74,18 @@ function getViewerCount()
   else
     return json.encodePretty(obj.stream.viewers)
   end
+end
+
+function localwrite(text, justify, line)
+    if justify == 1 then
+      -- Right
+      m.setCursorPos(1,line)
+      m.write(text)
+    else if justify == 2 then
+      centerText(m, text, line)
+    else if justify == 3 then
+      -- Not done yet
+    end
 end
 
 while true do
@@ -89,17 +117,16 @@ while true do
   local status, followers, follower = pcall(getFollowers)
 
   if status then
-    m.setCursorPos(1,line_followers)  
-    m.write("Twitch Followers: " .. followers)
+    localwrite("Twitch Followers: " .. followers, justify_followers, line_followers)
 
     m.setCursorPos(1,line_follower)
-    m.write("Last Follower: " .. follower)
+    localwrite("Last Follower: " .. follower, justify_follower, line_follower)
   else
     m.setCursorPos(1,line_followers)  
-    m.write("Twitch Followers: ERROR")
+    localwrite("Twitch Followers: ERROR", justify_followers, line_followers)
 
     m.setCursorPos(1,line_follower)
-    m.write("Last Follower: ERROR")
+    localwrite("Last Follower: ERROR", justify_follower, line_follower)
   end
 
   sleep(SleepTime)
