@@ -1,0 +1,6 @@
+computer
+1 | turnOn
+2 | shutdown
+3 | reboot
+4 | getID
+5 | isOn

@@ -1,0 +1,46 @@
+draconicevolution_tileenergypylon
+1 | listMethods
+2 | getAdvancedMethodsData
+3 | getEnergyStored
+4 | listSources
+5 | getMaxEnergyStored
+listMethods: 
+  returnTypes: 
+    1: STRING
+  args: 
+  description: List all the methods available
+  source: <meta>
+listSources: 
+  returnTypes: 
+    1: TABLE
+  args: 
+  description: List all method sources
+  source: <meta>
+getAdvancedMethodsData: 
+  returnTypes: 
+    1: TABLE
+  args: 
+  description: Get a complete table of information about all available methods
+  source: <meta>
+getMaxEnergyStored: 
+  returnTypes: 
+    1: NUMBER
+  args: 
+    1: 
+      optional: true
+      description: The direction you are interested in. (north, south, east, west, up or down)
+      type: STRING
+      name: slot
+  description: Get the max energy stored in the machine.
+  source: rf_receiver
+getEnergyStored: 
+  returnTypes: 
+    1: NUMBER
+  args: 
+    1: 
+      optional: true
+      description: The direction you are interested in. (north, south, east, west, up or down)
+      type: STRING
+      name: slot
+  description: Get the energy stored in the machine.
+  source: rf_receiver

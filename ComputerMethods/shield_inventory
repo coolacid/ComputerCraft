@@ -1,0 +1,229 @@
+shield_inventory
+1 | swapStacks
+2 | getInventoryName
+3 | destroyStack
+4 | pushItem
+5 | expandStack
+6 | getAdvancedMethodsData
+7 | getInventorySize
+8 | pushItemIntoSlot
+9 | getMaxEnergyStored
+10 | getStackInSlot
+11 | getAllStacks
+12 | listMethods
+13 | pullItem
+14 | condenseItems
+15 | getEnergyStored
+16 | pullItemIntoSlot
+17 | listSources
+listMethods: 
+  returnTypes: 
+    1: STRING
+  args: 
+  description: List all the methods available
+  source: <meta>
+listSources: 
+  returnTypes: 
+    1: TABLE
+  args: 
+  description: List all method sources
+  source: <meta>
+destroyStack: 
+  returnTypes: 
+  args: 
+    1: 
+      type: NUMBER
+      description: The slot number, from 1 to the max amount of slots
+      name: slotNumber
+  description: Destroy a stack
+  source: inventory
+pullItemIntoSlot: 
+  returnTypes: 
+    1: NUMBER
+  args: 
+    1: 
+      type: STRING
+      description: The direction of the other inventory. (north, south, east, west, up or down)
+      name: direction
+    2: 
+      type: NUMBER
+      description: The slot in the OTHER inventory that you're pulling from
+      name: slot
+    3: 
+      optional: true
+      description: The maximum amount of items you want to pull
+      type: NUMBER
+      name: maxAmount
+    4: 
+      optional: true
+      description: The slot in the current inventory that you want to pull into
+      type: NUMBER
+      name: intoSlot
+  description: Pull an item from a slot in another inventory into a slot in this one. Returns the amount of items moved
+  source: inventory-world
+getEnergyStored: 
+  returnTypes: 
+    1: NUMBER
+  args: 
+    1: 
+      optional: true
+      description: The direction you are interested in. (north, south, east, west, up or down)
+      type: STRING
+      name: slot
+  description: Get the energy stored in the machine.
+  source: rf_provider
+condenseItems: 
+  returnTypes: 
+  args: 
+  description: Condense and tidy the stacks in an inventory
+  source: inventory
+getInventorySize: 
+  returnTypes: 
+    1: NUMBER
+  args: 
+  description: Get the size of this inventory
+  source: inventory
+getAllStacks: 
+  returnTypes: 
+    1: TABLE
+  args: 
+  description: Get a table with all the items of the chest
+  source: inventory
+getInventoryName: 
+  returnTypes: 
+    1: STRING
+  args: 
+  description: Get the name of this inventory
+  source: inventory
+pushItemIntoSlot: 
+  returnTypes: 
+    1: NUMBER
+  args: 
+    1: 
+      type: STRING
+      description: The direction of the other inventory. (north, south, east, west, up or down)
+      name: direction
+    2: 
+      type: NUMBER
+      description: The slot in the current inventory that you're pushing from
+      name: slot
+    3: 
+      optional: true
+      description: The maximum amount of items you want to push
+      type: NUMBER
+      name: maxAmount
+    4: 
+      optional: true
+      description: The slot in the other inventory that you want to push into
+      type: NUMBER
+      name: intoSlot
+  description: Push an item from the current inventory into slot on the other one. Returns the amount of items moved
+  source: inventory-world
+pushItem: 
+  returnTypes: 
+    1: NUMBER
+  args: 
+    1: 
+      type: STRING
+      description: The direction of the other inventory. (north, south, east, west, up or down)
+      name: direction
+    2: 
+      type: NUMBER
+      description: The slot in the current inventory that you're pushing from
+      name: slot
+    3: 
+      optional: true
+      description: The maximum amount of items you want to push
+      type: NUMBER
+      name: maxAmount
+    4: 
+      optional: true
+      description: The slot in the other inventory that you want to push into
+      type: NUMBER
+      name: intoSlot
+  description: Push an item from the current inventory into slot on the other one. Returns the amount of items moved
+  source: inventory-world
+getStackInSlot: 
+  returnTypes: 
+    1: TABLE
+  args: 
+    1: 
+      type: NUMBER
+      description: The slot number, from 1 to the max amount of slots
+      name: slotNumber
+  description: Get details of an item in a particular slot
+  source: inventory
+getAdvancedMethodsData: 
+  returnTypes: 
+    1: TABLE
+  args: 
+  description: Get a complete table of information about all available methods
+  source: <meta>
+getMaxEnergyStored: 
+  returnTypes: 
+    1: NUMBER
+  args: 
+    1: 
+      optional: true
+      description: The direction you are interested in. (north, south, east, west, up or down)
+      type: STRING
+      name: slot
+  description: Get the max energy stored in the machine.
+  source: rf_provider
+swapStacks: 
+  returnTypes: 
+  args: 
+    1: 
+      type: NUMBER
+      description: The first slot
+      name: from
+    2: 
+      type: NUMBER
+      description: The other slot
+      name: to
+    3: 
+      optional: true
+      description: 
+      type: STRING
+      name: fromDirection
+    4: 
+      optional: true
+      description: 
+      type: STRING
+      name: fromDirection
+  description: Swap two slots in the inventory
+  source: inventory
+expandStack: 
+  returnTypes: 
+    1: TABLE
+  args: 
+    1: 
+      type: TABLE
+      description: 
+      name: stack
+  description: Get full stack information from stub one {id=..., [qty=...], [dmg=...]}
+  source: inventory
+pullItem: 
+  returnTypes: 
+    1: NUMBER
+  args: 
+    1: 
+      type: STRING
+      description: The direction of the other inventory. (north, south, east, west, up or down)
+      name: direction
+    2: 
+      type: NUMBER
+      description: The slot in the OTHER inventory that you're pulling from
+      name: slot
+    3: 
+      optional: true
+      description: The maximum amount of items you want to pull
+      type: NUMBER
+      name: maxAmount
+    4: 
+      optional: true
+      description: The slot in the current inventory that you want to pull into
+      type: NUMBER
+      name: intoSlot
+  description: Pull an item from a slot in another inventory into a slot in this one. Returns the amount of items moved
+  source: inventory-world
