@@ -83,7 +83,7 @@ function localwrite(text, justify, line)
     elseif justify == 2 then
       functions.centerText(m, text, line)
     elseif justify == 3 then
-      -- Not done yet
+      functions.rightJustify(m, text, line)
     end
     m.write(text)
 end

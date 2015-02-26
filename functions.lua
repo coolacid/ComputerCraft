@@ -9,8 +9,18 @@ function centerText(m, text, dy)
   if dy == nil then
     m.setCursorPos(center, math.ceil(y/2))
   elseif dy > 0 then
-    local x,y = m.getSize()
     m.setCursorPos(center, dy)
+  end
+  return center
+end
+
+function rightJustify(m, text, dy)
+  local x,y=m.getSize()
+  right = x-text:len()
+  if dy == nil then
+    m.setCursorPos(right, math.ceil(y/2))
+  elseif dy > 0 then
+    m.setCursorPos(right, dy)
   end
   return center
 end
