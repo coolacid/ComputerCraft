@@ -45,7 +45,7 @@ if not fs.exists('json') then
 end
 
 if not fs.exists('functions') then
-	print("JSON API not found - Downloading")
+	print("internal functions not found - Downloading")
 	shell.run("github get coolacid/ComputerCraft/master/functions.lua functions")
 end
 
@@ -80,38 +80,34 @@ function localwrite(text, justify, line)
     if justify == 1 then
       -- Right
       m.setCursorPos(1,line)
-      m.write(text)
-    else if justify == 2 then
-      centerText(m, text, line)
-    else if justify == 3 then
+    elseif justify == 2 then
+      functions.centerText(m, text, line)
+    elseif justify == 3 then
       -- Not done yet
     end
+    m.write(text)
 end
 
 while true do
   local status, live = pcall(getViewerCount)
 
   if status then 
-    m.setCursorPos(1,line_streamer)
     if live == nil then
       m.setBackgroundColor(colors.white)
       m.clear()
-      m.write(streamid)
-      m.setCursorPos(1,line_viewers)  
-      m.write("Live Viewers: Offline")
+      localwrite(streamid, justify_streamer, line_streamer)
+      localwrite("Live Viewers: Offline", justify_viewers, line_viewers)
     else
       m.setBackgroundColor(colors.yellow)
       m.clear()
-      m.write(streamid)
-      m.setCursorPos(1,line_viewers)
-      m.write("Live Viewers: " .. live)
+      localwrite(streamid, justify_streamer, line_streamer)
+      localwrite("Live Viewers: " .. live, justify_viewers, line_viewers)
     end
   else
       m.setBackgroundColor(colors.white)
       m.clear()
-      m.write(streamid)
-      m.setCursorPos(1,line_viewers)
-      m.write("Live Viewers: ERROR")
+      localwrite(streamid, justify_streamer, line_streamer)
+      localwrite("Live Viewers: ERROR", justify_viewers, line_viewers)
   end
 
   local status, followers, follower = pcall(getFollowers)
