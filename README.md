@@ -39,6 +39,14 @@ Twitchdisplay
 Display twitch statistics in game
 - Originally by Bacon_Donut and rewriten
 
+MCTimeSince
+-----------
+
+![MCDaysSince](https://raw.githubusercontent.com/coolacid/ComputerCraft/master/ScreenShots/MCDaysSince.png)
+
+Shows the number of days since an event on a monitor. Reset the timer by providing a redstone signal to the defined side. 
+
+
 tester.lua
 ----------
 
