@@ -16,7 +16,7 @@ ResetSide = "left"
 What = "Days since last button press"
 
 -- Use real time
-RealTime = true
+RealTime = false
 
 ----- No need to change anything bellow this point
 
