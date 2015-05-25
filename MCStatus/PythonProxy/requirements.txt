@@ -1,0 +1,3 @@
+mcstatus==2.1
+simpleyaml==1.0
+

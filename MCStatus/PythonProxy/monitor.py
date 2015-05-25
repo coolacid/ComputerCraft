@@ -4,6 +4,8 @@ import SocketServer
 import yaml
 import json
 
+# To install requirements use: pip install -r requirements.txt
+
 PORT = 8000
 
 Handler = SimpleHTTPServer.SimpleHTTPRequestHandler
