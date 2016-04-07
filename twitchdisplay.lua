@@ -6,16 +6,17 @@
 -- http://twitch.tv/bacon_donut
 
 -- This is formatted to fit on a 1x3 wall of Advanced Monitors with an Advanced Computer connected to a side
--- To get this to work you need to edit the streamid variable then run these five commands:
+-- To get this to work you need to edit the streamid variable then run these six commands:
 
 -- label set SomeKindOfNameHere
 -- pastebin get WdiT6sR5 bootstrap
 -- bootstrap
 -- github get coolacid/ComputerCraft/master/twitchdisplay.lua startup
+-- edit startup
 -- startup
 
 -- Twitch Name of the Streamer
-streamid = "Bacon_Donut"
+streamid = "coolacid"
 
 -- Set the Y line for where you want the different bits to go.
 line_streamer = 1
@@ -41,7 +42,7 @@ SleepTime = 60
 -- Check to see if the JSON api exists. Otherwise, download it. 
 if not fs.exists('json') then
 	print("JSON API not found - Downloading")
-	shell.run("pastebin get 4nRg9CHU json")
+	shell.run("github get coolacid/ComputerCraft/master/json.lua json.lua")
 end
 
 if not fs.exists('functions') then
@@ -49,7 +50,11 @@ if not fs.exists('functions') then
 	shell.run("github get coolacid/ComputerCraft/master/functions.lua functions")
 end
 
-os.loadAPI("json")
+print ("Starting up!")
+print ("To Exit press and hold CTRL-T")
+print ("To Reboot press and hold CTRL-R")
+
+JSON = (loadfile "json.lua")()
 os.loadAPI("functions")
 
 local m = peripheral.find("monitor")
@@ -59,7 +64,7 @@ m.setTextScale(1)
 
 function getFollowers()
   str = http.get("https://api.twitch.tv/kraken/channels/" .. streamid .. "/follows?limit=1").readAll()
-  obj = json.decode(str)
+  obj = JSON:decode(str)
   follows = json.encodePretty(obj._total)
   follower = json.encodePretty(obj.follows[1].user.name)
   follower = follower:gsub('"', '')
@@ -68,7 +73,7 @@ end
 
 function getViewerCount()
   str = http.get("https://api.twitch.tv/kraken/streams/" .. streamid).readAll()
-  obj = json.decode(str)
+  obj = JSON:decode(str)
   if obj.stream == nil then
     return nil
   else
@@ -80,12 +85,17 @@ function localwrite(text, justify, line)
     if justify == 1 then
       -- Right
       m.setCursorPos(1,line)
+      m.write(text)
     elseif justify == 2 then
       functions.centerText(m, text, line)
+      m.write(text)
     elseif justify == 3 then
       functions.rightJustify(m, text, line)
+      m.write(text)
+    elseif justify == 4 then
+      functions.splitText(m, text, ":", line)
+      -- Split Text HAS to write, so we don't need too
     end
-    m.write(text)
 end
 
 while true do

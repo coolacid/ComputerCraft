@@ -24,3 +24,13 @@ function rightJustify(m, text, dy)
   end
   return center
 end
+
+function splitText(m, text, delimiter, dy) -- We assume we're writing here
+    splitpoint = string.find(text, delimiter)
+    firstword = string.sub(text, 0, splitpoint -1 )
+    secondword = string.sub(text, splitpoint +1 ):gsub(" ", "")
+    rightJustify(m, secondword, dy)
+    m.write(secondword)
+    m.setCursorPos(1, dy)
+    m.write(firstword)
+end
