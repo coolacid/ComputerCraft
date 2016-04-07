@@ -40,7 +40,7 @@ justify_viewers = 1
 SleepTime = 60
 
 -- Check to see if the JSON api exists. Otherwise, download it. 
-if not fs.exists('json') then
+if not fs.exists('json.lua') then
 	print("JSON API not found - Downloading")
 	shell.run("github get coolacid/ComputerCraft/master/json.lua json.lua")
 end
