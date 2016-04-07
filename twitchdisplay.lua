@@ -28,6 +28,7 @@ line_viewers = 5
 -- 1 - Left
 -- 2 - Center
 -- 3 - Right
+-- 4 - Split
 
 justify_streamer = 1
 justify_followers = 1
@@ -65,8 +66,8 @@ m.setTextScale(1)
 function getFollowers()
   str = http.get("https://api.twitch.tv/kraken/channels/" .. streamid .. "/follows?limit=1").readAll()
   obj = JSON:decode(str)
-  follows = json.encodePretty(obj._total)
-  follower = json.encodePretty(obj.follows[1].user.name)
+  follows = obj._total
+  follower = obj.follows[1].user.name
   follower = follower:gsub('"', '')
   return follows, follower
 end
@@ -77,7 +78,7 @@ function getViewerCount()
   if obj.stream == nil then
     return nil
   else
-    return json.encodePretty(obj.stream.viewers)
+    return obj.stream.viewers
   end
 end
 
