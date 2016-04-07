@@ -22,6 +22,14 @@ Detect players in your area by placing multiple sensors connected to an advanced
 - Place as many sensors as you see fit.
 - Display using a Glasses Controller / Terminal Glasses HUD or Advanced Monitor
 
+FollowerAlarm.lua
+----------------
+
+This tracks the last follower from the stream, if the last follower changes emits a redstone signal for X seconds. This isn't exactly smart (yet):
+- This will trigger if there is a NEW follower
+- This will trigger if a follower no longer follows
+- This will trigger if a follower re-follows
+
 ViewerAlarm?.lua
 ----------------
 
