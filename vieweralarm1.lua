@@ -5,6 +5,7 @@
 -- pastebin get WdiT6sR5 bootstrap
 -- bootstrap
 -- github get coolacid/ComputerCraft/master/vieweralarm1.lua startup
+-- edit startup
 -- startup
 
 -- Twitch Name of the Streamer

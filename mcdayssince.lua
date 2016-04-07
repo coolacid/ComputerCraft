@@ -7,6 +7,7 @@
 -- pastebin get WdiT6sR5 bootstrap
 -- bootstrap
 -- github get coolacid/ComputerCraft/master/mcdayssince.lua startup
+-- edit startup
 -- startup
 
 -- Define where to check for the redstone signal
