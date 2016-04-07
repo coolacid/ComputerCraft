@@ -60,6 +60,7 @@ while true do
         redstone.setOutput(SignalSide, true)
         sleep(AlarmTime)
         redstone.setOutput(SignalSide, false)
+        hot = false
     end
     lastfollower = follower
   else
