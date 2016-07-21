@@ -5,6 +5,7 @@
 -- pastebin get WdiT6sR5 bootstrap
 -- bootstrap
 -- github get coolacid/ComputerCraft/master/lightflicker.lua startup
+-- edit startup (if you want to change values)
 -- startup
 
 -- How often to produce a flicker
