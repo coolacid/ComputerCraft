@@ -22,6 +22,16 @@ Detect players in your area by placing multiple sensors connected to an advanced
 - Place as many sensors as you see fit.
 - Display using a Glasses Controller / Terminal Glasses HUD or Advanced Monitor
 
+LightFlicker.lua
+----------------
+
+Emits a redstone signal to the designated side producing a flickering effect. Options include:
+- How long between sets of flickers
+- Min/Max for the off flicker
+- Min/Max for the on flicker
+- Min/Man for the number of flickers
+
+
 FollowerAlarm.lua
 ----------------
 
