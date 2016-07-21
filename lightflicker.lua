@@ -11,11 +11,11 @@
 SleepTime = 10
 
 -- How Long to flicker off for
-FlickerOffMinTime = .25
-FlickerOffMaxTime = .5
+FlickerOffMinTime = .1
+FlickerOffMaxTime = .3
 
 FlickerOnMinTime = .25
-FlickerOnMaxTime = 2
+FlickerOnMaxTime = 1
 
 -- Min and Max number of Flickers
 FlickerMin = 2
