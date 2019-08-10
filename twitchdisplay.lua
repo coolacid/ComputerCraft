@@ -113,24 +113,24 @@ end
 
 while true do
   local status, live = pcall(getViewerCount)
-  local status, tName = pcall(getName)
+  local status, name = pcall(getName)
 
   if status then 
     if live == nil then
       m.setBackgroundColor(colors.white)
       m.clear()
-      localwrite(tName, justify_streamer, line_streamer)
+      localwrite(name, justify_streamer, line_streamer)
       localwrite("Live Viewers: Offline", justify_viewers, line_viewers)
     else
       m.setBackgroundColor(colors.yellow)
       m.clear()
-      localwrite(tName, justify_streamer, line_streamer)
+      localwrite(name, justify_streamer, line_streamer)
       localwrite("Live Viewers: " .. live, justify_viewers, line_viewers)
     end
   else
       m.setBackgroundColor(colors.white)
       m.clear()
-      localwrite(tName, justify_streamer, line_streamer)
+      localwrite(name, justify_streamer, line_streamer)
       localwrite("Live Viewers: ERROR", justify_viewers, line_viewers)
   end
 
