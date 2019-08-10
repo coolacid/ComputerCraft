@@ -112,7 +112,8 @@ function localwrite(text, justify, line)
 end
 
 while true do
-  local status, live = pcall(getViewerCount), tName - pcall(getName)
+  local status, live = pcall(getViewerCount)
+  local status, tName - pcall(getName)
 
   if status then 
     if live == nil then
