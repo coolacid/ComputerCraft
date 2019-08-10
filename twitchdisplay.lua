@@ -11,12 +11,12 @@
 -- label set SomeKindOfNameHere
 -- pastebin get WdiT6sR5 bootstrap
 -- bootstrap
--- github get coolacid/ComputerCraft/master/twitchdisplay.lua startup
+-- github get vertex101/ComputerCraft/master/twitchdisplay.lua startup
 -- edit startup
 -- startup
 
 -- Twitch Name of the Streamer
-streamid = "guardian_606"
+streamid = "48302263"
 -- Client ID is needed for API calls go HERE: https://dev.twitch.tv/console/apps/create to get ur client id
 clientid = "dmkxw0q0sn51i3riv85f2v1lr7mi6r"
 
