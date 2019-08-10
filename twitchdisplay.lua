@@ -15,8 +15,10 @@
 -- edit startup
 -- startup
 
--- Twitch Name of the Streamer
+-- Twitch channel ID of the Streamer
 streamid = "48302263"
+-- Twitch channel name
+streamName = "guardian_606"
 -- Client ID is needed for API calls go HERE: https://dev.twitch.tv/console/apps/create to get ur client id
 clientid = "dmkxw0q0sn51i3riv85f2v1lr7mi6r"
 
@@ -74,16 +76,6 @@ function getFollowers()
   return follows, follower
 end
 
-function getName()
-  str = http.get("https://api.twitch.tv/kraken/streams/" .. streamid .. "/?client_id=" .. clientid).readAll()
-  obj = JSON:decode(str)
-  if obj.stream == nil then
-    return nil
-  else
-    return obj.stream[0].channel.name
-  end
-end
-
 function getViewerCount()
   str = http.get("https://api.twitch.tv/kraken/streams/" .. streamid .. "/?client_id=" .. clientid).readAll()
   obj = JSON:decode(str)
@@ -113,24 +105,23 @@ end
 
 while true do
   local status, live = pcall(getViewerCount)
-  local status, name = pcall(getName)
 
   if status then 
     if live == nil then
       m.setBackgroundColor(colors.white)
       m.clear()
-      localwrite(name, justify_streamer, line_streamer)
+      localwrite(streamName, justify_streamer, line_streamer)
       localwrite("Live Viewers: Offline", justify_viewers, line_viewers)
     else
       m.setBackgroundColor(colors.yellow)
       m.clear()
-      localwrite(name, justify_streamer, line_streamer)
+      localwrite(streamName, justify_streamer, line_streamer)
       localwrite("Live Viewers: " .. live, justify_viewers, line_viewers)
     end
   else
       m.setBackgroundColor(colors.white)
       m.clear()
-      localwrite(name, justify_streamer, line_streamer)
+      localwrite(streamName, justify_streamer, line_streamer)
       localwrite("Live Viewers: ERROR", justify_viewers, line_viewers)
   end
 
