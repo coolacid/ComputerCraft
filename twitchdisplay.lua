@@ -11,7 +11,7 @@
 -- label set SomeKindOfNameHere
 -- pastebin get WdiT6sR5 bootstrap
 -- bootstrap
--- github get vertex101/ComputerCraft/master/twitchdisplay.lua startup
+-- github get coolacid/ComputerCraft/master/twitchdisplay.lua startup
 -- edit startup
 -- startup
 
