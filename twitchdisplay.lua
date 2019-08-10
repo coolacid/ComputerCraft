@@ -74,6 +74,16 @@ function getFollowers()
   return follows, follower
 end
 
+function getName()
+  str = http.get("https://api.twitch.tv/kraken/streams/" .. streamid .. "/?client_id=" .. clientid).readAll()
+  obj = JSON:decode(str)
+  if obj.stream == nil then
+    return nil
+  else
+    return obj.stream.channel.name
+  end
+end
+
 function getViewerCount()
   str = http.get("https://api.twitch.tv/kraken/streams/" .. streamid .. "/?client_id=" .. clientid).readAll()
   obj = JSON:decode(str)
@@ -102,24 +112,24 @@ function localwrite(text, justify, line)
 end
 
 while true do
-  local status, live = pcall(getViewerCount)
+  local status, live = pcall(getViewerCount), tName - pcall(getName)
 
   if status then 
     if live == nil then
       m.setBackgroundColor(colors.white)
       m.clear()
-      localwrite(streamid, justify_streamer, line_streamer)
+      localwrite(tName, justify_streamer, line_streamer)
       localwrite("Live Viewers: Offline", justify_viewers, line_viewers)
     else
       m.setBackgroundColor(colors.yellow)
       m.clear()
-      localwrite(streamid, justify_streamer, line_streamer)
+      localwrite(tName, justify_streamer, line_streamer)
       localwrite("Live Viewers: " .. live, justify_viewers, line_viewers)
     end
   else
       m.setBackgroundColor(colors.white)
       m.clear()
-      localwrite(streamid, justify_streamer, line_streamer)
+      localwrite(tName, justify_streamer, line_streamer)
       localwrite("Live Viewers: ERROR", justify_viewers, line_viewers)
   end
 
