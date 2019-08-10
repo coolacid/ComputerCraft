@@ -16,11 +16,11 @@
 -- startup
 
 -- Twitch channel ID of the Streamer
-streamid = ""
+streamid = "48302263"
 -- Twitch channel name
-streamName = ""
+streamName = "guardian_606"
 -- Client ID is needed for API calls go HERE: https://dev.twitch.tv/console/apps/create to get ur client id
-clientid = ""
+clientid = "dmkxw0q0sn51i3riv85f2v1lr7mi6r"
 
 -- Set the Y line for where you want the different bits to go.
 line_streamer = 1
