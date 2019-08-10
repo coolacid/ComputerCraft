@@ -17,6 +17,8 @@
 
 -- Twitch Name of the Streamer
 streamid = "coolacid"
+-- Client ID is needed for API calls go HERE: https://dev.twitch.tv/console/apps/create to get ur client id
+clientid = ""
 
 -- Set the Y line for where you want the different bits to go.
 line_streamer = 1
@@ -64,7 +66,7 @@ m.setTextColor(colors.blue)
 m.setTextScale(1)
 
 function getFollowers()
-  str = http.get("https://api.twitch.tv/kraken/channels/" .. streamid .. "/follows?limit=1").readAll()
+  str = http.get("https://api.twitch.tv/kraken/channels/" .. streamid .. "/follows?limit=1&client_id=" .. clientid).readAll()
   obj = JSON:decode(str)
   follows = obj._total
   follower = obj.follows[1].user.name
@@ -73,7 +75,7 @@ function getFollowers()
 end
 
 function getViewerCount()
-  str = http.get("https://api.twitch.tv/kraken/streams/" .. streamid).readAll()
+  str = http.get("https://api.twitch.tv/kraken/streams/" .. streamid .. "/?client_id=" .. clientid).readAll()
   obj = JSON:decode(str)
   if obj.stream == nil then
     return nil
