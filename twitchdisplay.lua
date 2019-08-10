@@ -80,7 +80,7 @@ function getName()
   if obj.stream == nil then
     return nil
   else
-    return obj.stream.channel.name
+    return obj.stream[0].channel.name
   end
 end
 
