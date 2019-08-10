@@ -113,7 +113,7 @@ end
 
 while true do
   local status, live = pcall(getViewerCount)
-  local status, tName - pcall(getName)
+  local status, tName = pcall(getName)
 
   if status then 
     if live == nil then
